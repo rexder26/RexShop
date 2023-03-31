@@ -1,0 +1,37 @@
+{% extends 'account/main.html'%}
+
+{% block content %}
+
+{% include 'components/status.html' %}
+
+    <h1>User Profile</h1>
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-body">
+                <table class="table table-sm">
+                    <tr>
+                        <th>Job</th>
+                        <th>Category</th>
+                        <th>Date Orderd</th>
+                        <th>Status</th>
+                        <th>Update</th>
+                        <th>Remove</th>
+                    </tr>
+    
+                    {% for i in userorders%}
+                    <tr>
+                        <td>{{i.job}}</td>
+                        <td>{{i.job.category}}</td>
+                        <td>{{i.date_created}}</td>
+                        <td>{{i.status}}</td>
+                        <td><a class="btn btn-sm btn-info" href="{% url 'update_order' i.id %}">Update</a></td>
+                        <td><a class="btn btn-sm btn-danger" href="{% url 'delete_order' i.id %}">Delete</a></td>
+                    </tr>
+                    </tr>
+                    {% endfor %}
+                </table>
+                <a href="{% url 'settings'%}">Edit</a>
+            </div>
+    
+{% endblock %}
+    

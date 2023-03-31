@@ -1,0 +1,17 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <img src="{% static 'images/logo.png'%}" alt="Rexapp">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{%url 'home'%}"><b>Dashboard</b></a>
+        <a class="nav-item nav-link" href="{%url 'job'%}"><b>Jobs</b></a>
+      </div>
+    </div>
+    <span style="color: white; font-size: 18px; margin-right: 20px;"><a style="color: white; font-size: 18px; margin-right: 20px;" href="{% url 'profilepage'%}">Hello, {{request.user}}</a> </span>
+    <span><a style=" font-size: 18px; margin-right: 20px;" href="{% url 'logout' %}">Log out</a></span>
+  </nav>
+  
+  

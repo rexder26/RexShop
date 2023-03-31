@@ -1,0 +1,11 @@
+{% extends 'account/main.html' %}
+
+% load static %
+{% block content %}
+
+<form action="{% url 'newuser_form' %}" method="post">
+    {% csrf_token %}
+    {{newUserForm}}
+</form>
+
+{% endblock %}
